@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+
+.wrapper {
+  overflow: scroll;
+}
+
+/* ------Message --------*/
+
+div.error {
+  background-color: lightcoral;
+  margin: 10px;
+  padding: 5px 15px;
+}
+
+div.success {
+  background-color: palegreen;
+  margin: 10px;
+  padding: 5px 15px;
+}
+
+/* -------menu ----------*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+li {
+  float: left;
+  padding: 0 2px;
+}
+
+li:first-child {
+  padding: 14px 16px;
+  background-color: black;
+  color: whitesmoke;
+}
+
+li a {
+  display: block;
+  color: whitesmoke;
+  background-color: darkgrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* --------table --------*/
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+}
+
+th {
+  text-align: start;
+}
+
+thead th:not(:first-child),
+td {
+  text-align: end;
+}
+
+tbody td:first-child {
+  text-align: center;
+}
+
+thead {
+  border-block-end: 2px solid;
+  background: whitesmoke;
+}
+
+tfoot {
+  border-block: 2px solid;
+  background: whitesmoke;
+}
+
+th,
+td {
+  border: 1px solid lightgrey;
+  padding: 0.25rem 0.75rem;
+  vertical-align: baseline;
+}
+
+th:first-child {
+  position: sticky;
+  inset-inline-start: 0;
+  border-inline-end: none;
+}
+
+tbody th {
+  background: white;
+}
+
+thead th,
+tfoot th {
+  background: whitesmoke;
+}
+
+thead th {
+  vertical-align: bottom;
+}
+
+tr:hover {
+  background: whitesmoke;
+}
+
+tfoot th {
+  text-align: end;
+}
+
+td a {
+  color: steelblue;
+  text-decoration: none;
+}
+
+td a:hover {
+  color: navy;
+}
+
+thead tr:first-child th {
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: darkgrey;
+}
+
+/*----------Form -------------*/
+/* styles.css */
+form {
+  background: whitesmoke;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: auto;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: grey;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: darkgrey;
+  border: none;
+  color: whitesmoke;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/*---------Form in table ------------*/
+td input[type="number"] {
+  border: 0;
+  width: 4rem;
+  text-align: end;
+}
+
+td select {
+  border: 0;
+  width: 100%;
+  padding: 8px;
+}
+
