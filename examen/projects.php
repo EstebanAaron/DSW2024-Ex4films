@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <?php require 'connection.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
