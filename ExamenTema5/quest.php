@@ -4,6 +4,8 @@ session_start();
 if (empty($_COOKIE['name'])) {
   header('Location: index.php');
 }
+
+
 if ((isset($_POST['answer']))) {
   $count= ++$_POST['count'];
   $answer = $_POST['answer'];
@@ -15,7 +17,9 @@ else{
   $mensaje='';
   
 }
-$error = false;
+
+
+$error = true;
 $continue=true;
 
 if (!isset($_SESSION['fecha'])) { $_SESSION['fecha'] = array();}
@@ -36,13 +40,26 @@ if (!isset($_SESSION['fecha'])) { $_SESSION['fecha'] = array();}
   <p>
     Fecha : <?php 
     $today = date('d-m-Y'); 
-    echo $today.'|'.$dailyQuestions[$today]['topic'];?>
+    if (isset($dailyQuestions[$today])) {
+      echo $today.'|'.$dailyQuestions[$today]['topic'];
+    }else{
+      echo '<p>No hay reto para el dia de hoy</p>';
+      $error=false;
+    }
+    
+    
+    ?>
   </p>
 
+  
+
   <?php
+  if ($error) {
+   
+  
   if (isset($_SESSION[$today])) {
     if ($count==0) {
-      $error=true;
+      $error=false;
     }
     
   }else{
@@ -79,7 +96,7 @@ if (!isset($_SESSION['fecha'])) { $_SESSION['fecha'] = array();}
 print_r($_SESSION['fecha']);
   if (count($dailyQuestions[$today]['questions'])>$count&&$continue) {
 
-    if ($error) {
+    if (!$error) {
       echo 'Ya hicistes tus preguntas diarias';
     }
     else{
@@ -97,6 +114,7 @@ print_r($_SESSION['fecha']);
   else{
       echo 'Terminaste las preguntas con '.($count-1).' respuestas correctas'.$count;
   }
+}
 
   ?>
   
